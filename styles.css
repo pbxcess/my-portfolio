@@ -1,0 +1,144 @@
+/* Base Styles */
+:root{
+  --main-color: #4D181C;
+  --secondary-color: #7cadc7;
+  --third-color: #E58D2E;
+  --fourth-color: #DD671E;
+  --main-font: "ruigslay";
+  --secondary-font: "russtain";
+  --third-font: "swan";
+}
+
+/*Imported font styles*/
+@font-face{
+    font-family: "ruigslay";
+    src: url("./fonts/Ruigslay.ttf");
+}
+
+@font-face{
+    font-family: "russtain";
+    src: url("./fonts/Russtan demo.otf");
+}
+
+@font-face {
+  font-family: "swan";
+  src: url("./fonts/Swanley Free.ttf");
+}
+
+/* Body */
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: var(--secondary-color);
+}
+
+/* Headers */
+header {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--main-font);
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: var(--main-font);
+  font-size: 2rem;
+}
+
+
+p {
+  font-family: var(--third-font);
+  font-size: 1.3rem;
+}
+
+nav a {
+  color: var(--third-color);
+  margin: 0 10px;
+  text-decoration: none;
+  font-family: var(--third-font);
+  font-size: 1.5rem;
+}
+
+/*nav hover feature*/
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  max-width: 100hv;
+  margin: 20px;
+  background-color: var(--third-color);
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 100%;
+    justify-content: left;
+    background-color: var(--fourth-color);
+    padding: 20px;
+    border-radius: 6px;
+    font-family: var(--secondary-font);
+    font-size: 2rem;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px;
+    border: 2px solid var(--third-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 95%;
+    resize: vertical;
+}
+
+.contact-form input[type="submit"] {
+    padding: 12px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: var(--main-color);
+  color: var(--third-color);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-family: var(--main-font);
+}
+
+footer p {
+  font-family: var(--main-font);
+}
