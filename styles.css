@@ -28,10 +28,11 @@
 /* Body */
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   line-height: 1.6;
   background-color: var(--secondary-color);
+  max-width: 100%;
 }
 
 /* Headers */
@@ -44,7 +45,8 @@ header {
 
 h1 {
   font-family: var(--main-font);
-  font-size: 3rem;
+  font-size: 4rem;
+  margin-bottom: 5px;
 }
 
 h2 {
@@ -52,18 +54,24 @@ h2 {
   font-size: 2rem;
 }
 
+nav {
+  margin-top: 10px;
+}
+
 
 p {
   font-family: var(--third-font);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 nav a {
   color: var(--third-color);
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
   font-family: var(--third-font);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  list-style: none;
+  display: inline;
 }
 
 /*nav hover feature*/
@@ -74,7 +82,7 @@ nav a:hover {
 /* Sections */
 section {
   padding: 40px 20px;
-  max-width: 100hv;
+  max-width: 100%;
   margin: 20px;
   background-color: var(--third-color);
   margin-bottom: 20px;
@@ -130,15 +138,55 @@ section {
 /* Footer */
 footer {
   text-align: center;
-  padding: 15px;
+  padding: 5px;
   background-color: var(--main-color);
   color: var(--third-color);
-  position: relative;
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   font-family: var(--main-font);
 }
 
 footer p {
   font-family: var(--main-font);
+  margin: auto;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 20px 10px;
+    margin: 10px;
+  }
+
+  .contact-form {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
 }
