@@ -40,7 +40,7 @@ body {
 /* Headers */
 header {
   background-color: var(--main-color);
-  color: var(--secondary-color);
+  color: var(--fourth-color);
   padding: 20px;
   text-align: center;
   margin-bottom: 5px;
@@ -158,6 +158,7 @@ section {
     border-radius: 6px;
     font-family: var(--secondary-font);
     font-size: 2rem;
+    box-shadow: 0 0 8px var(--main-color)
 }
 
 .contact-form label {
@@ -168,39 +169,48 @@ section {
 .contact-form input[type="email"],
 .contact-form textarea {
     padding: 15px;
-    border: 2px solid var(--third-color);
     border-radius: 8px;
     font-size: 1rem;
     max-width: 95%;
     resize: vertical;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .contact-form input[type="submit"] {
     padding: 12px;
     background-color: var(--main-color);
     color: white;
-    border: none;
     border-radius: 8px;
     font-size: 1rem;
+    font-family: var(--main-font);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.contact-form input[type="submit"] p {
-    font-family: var(--main-font);
+.contact-form input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba (0, 0, 0, 0.3);
 }
 
 .contact-form input[type="submit"]:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--fifth-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /*Form Error styling*/
 .form-error {
   font-size: 1.3rem;
-  color: black;
-  background-color: var(--secondary-color);
+  color: var(--fifth-color);
+  background-color: var(--third-color);
   padding: 10px;
   border-radius: 8px;
+  margin-top: 10px;
+  display: hide;
+  box-shadow: 0 0 8px var(--main-color);
+}
+
+.form-error {
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -240,12 +250,17 @@ footer p {
 /* Responsive Layout */
 
 @media (max-width: 600px) {
+  header {
+    margin: 5px;
+  }
+
   h1 {
     font-size: 2rem;
   }
 
   h2 {
     font-size: 1.3rem;
+    margin-bottom: 0px;
   }
 
   h3 {
@@ -258,8 +273,8 @@ footer p {
 
   nav a {
     display: block;
-    margin: 10px 0;
     font-size: 1.2rem;
+    margin-top: 0;
   }
 
   section {
@@ -277,9 +292,28 @@ footer p {
   .contact-form textarea {
     font-size: 0.95rem;
     max-width: 85%;
+    padding: 20px;
   }
 
   footer {
     font-size: 0.9rem;
+  }
+
+  .toggle-details{
+    font-size: 1rem;
+  }
+
+  #typed-output {
+    display: block;
+    white-space: normal;
+    line-height: 2rem;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  #typed-output br {
+    display: block;
+    content: "";
+    margin-bottom: 15px;
   }
 }

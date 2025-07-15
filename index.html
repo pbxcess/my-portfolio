@@ -52,7 +52,7 @@
 
 <section id="contact">
     <h2>Contact Me</h2>
-    <form action="#" method="POST" class="contact-form">
+    <form action="#" method="POST" class="contact-form" novalidate>
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -63,8 +63,8 @@
         <textarea id="comments" name="comments" rows="10" required></textarea>
 
         <input type="submit" value="Send Message">
-        <p class="form-error" id="formError" style="color: red; display: none">Please fill out all fields correctly before submission.</p>
-    </form>
+        <p class="form-error" id="formError" style="color: red; display: none;"></p>
+</form>
 </section>
 
     <footer>

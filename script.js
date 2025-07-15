@@ -1,5 +1,4 @@
 //JS interactivity
-// script.js
 
 document.addEventListener("DOMContentLoaded", () => {
     const toggleButtons = document.querySelectorAll(".toggle-details");
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Contact Form Validation
-document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
   const errorDisplay = document.getElementById("formError");
 
@@ -31,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isValid = true;
     let errorMessage = "";
+
+    errorDisplay.style.display = "none";
 
     //Name Validation Error Msg
     if (name === "") {
@@ -57,20 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
       errorDisplay.textContent = errorMessage;
       errorDisplay.style.display = "block";
     } else {
-        errorDisplay.style.display = "none" //To hid error if everything is valid!
+        errorDisplay.style.display = "none" //To hide error if everything is valid!
     }
   });
-});
 
 
 //Typed.js animation
 
 const typed = new Typed ("#typed-output", {
   strings: [
-    "Welcome to my Portfolio!",
-    "Web Developer in Training",
-    "Beginner coder",
-    "Cat Lover and Basketball Vet",
+    "Welcome to my Portfolio! <br>",
+    "Web Developer in Training <br>",
+    "Beginner coder <br>",
+    "Cat Lover and Basketball Vet<br>",
   ],
   typeSpeed: 60,
   backSpeed: 40,
