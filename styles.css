@@ -205,28 +205,3 @@ footer p {
     font-size: 0.9rem;
   }
 }
-
-/*Project Gallery Buttons*/
-.project-toggle-btn {
-  background-color: var(--main-color);
-  color: var(--main-color);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  font-family: var(--third-font);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 15px;
-}
-
-.project-toggle-btn:hover {
-  background-color: var(--fourth-color);
-}
-
-.project-details {
-  display: none;
-  margin-top: 10px;
-  background-color: var(--fourth-color);
-  padding: 10px;
-  border-radius: 5px;
-}
