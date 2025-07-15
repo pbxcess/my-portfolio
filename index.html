@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -31,7 +32,21 @@
 
     <section id="projects">
         <h2>My Projects</h2>
-        <p>This is where my future projects will be listed!</p>
+        <div class="project">
+            <h3>Etch a Sketch</h3>
+            <button class="toggle-details">Show Details</button>
+            <div class="project-details" style="display: none;">
+                <p>An interactive pixel art app. Allows users to draw, save, and download their art.</p>
+                <p>Link to the live page: Coming soon!</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>Project 2</h3>
+            <button class="toggle-details">Show Details</button>
+            <div class="project-details" style="display: none;">
+                <p>Project details coming soon!</p>
+        </div>
     </section>
 
 <section id="contact">
@@ -47,6 +62,7 @@
         <textarea id="comments" name="comments" rows="10" required></textarea>
 
         <input type="submit" value="Send Message">
+        <p class="form-error" id="formError" style="color: red; display: none">Please fill out all fields correctly before submission.</p>
     </form>
 </section>
 
