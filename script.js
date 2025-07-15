@@ -61,3 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+//Typed.js animation
+
+const typed = new Typed ("#typed=output", {
+  strings: [
+    "Welcome to my Portfolio!"
+    "Web Developer in Training"
+    "Beginner coder"
+    "Cat Lover and Basketball Vet"
+  ],
+  typeSpeed: 60,
+  backSpeed: 40,
+  loop: true
+})
