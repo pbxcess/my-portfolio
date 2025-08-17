@@ -76,4 +76,24 @@ document.addEventListener("DOMContentLoaded", () => {
     backDelay: 1500,
     loop: true
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const hsGrad = moment("2020", "YYYY");
+    const LUGrad = moment("2025", "YYYY");
+    const today = moment();
+
+    const hsText = `Graduated in 2020 (${today.diff(hsGrad, "years")} years ago)`;
+    const LUtext = `Graduated in 2025 (${today.diff(LUGrad, "years")} years go)`;
+    const currentText = `Computer Programming student at Humber College (${today.format("YYYY")})`;
+
+    const hsElem = document.getElementById("hs-grad");
+    const LUElem = document.getElementById("LU-grad");
+    const currentElem = document.getElementById("current");
+
+    if (hsEleme && LUElem && currentElem) {
+      hsElem.textContent = hsText;
+      LUElem.textContent = LUtext;
+      currentElem.textContent = currentText;
+    }
+  })
 });

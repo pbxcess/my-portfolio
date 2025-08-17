@@ -109,7 +109,6 @@ section {
   background-color: var(--third-color);
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px var(--main-color);
 }
 
 /*Project Details Styling */
@@ -404,4 +403,16 @@ footer p {
 .hero-nav a:hover {
   color: var(--fourth-color);
   transform: translateX(5px);
+  text-decoration: underline;
+}
+
+#timeline ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#timeline li {
+  font-size: 1.5rem;
+  color: var(--fifth-color);
+  margin-bottom: 10px;
 }
