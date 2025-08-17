@@ -1,18 +1,40 @@
-<main>
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="#" method="POST" class="contact-form" novalidate>
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Princess Krish Anne Bernardino</h1>
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+        </nav>
+    </header>
 
-      <label for="comments">Comments:</label>
-      <textarea id="comments" name="comments" rows="10" required></textarea>
+    <main>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST" class="contact-form" novalidate>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
 
-      <input type="submit" value="Send Message">
-      <p class="form-error" id="formError" style="display: none;"></p>
-    </form>
-  </section>
-</main>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="10" required></textarea>
+
+            <input type="submit" value="Send Message">
+            <p class="form-error" id="formError" style="display: none;"></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
