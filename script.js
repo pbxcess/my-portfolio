@@ -114,3 +114,15 @@ document.addEventListener("click", function(e) {
     target.scrollIntoView({behavior: "smooth"});
   }
 })
+
+//Reveal on scroll
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  })
+}, { threshol: 0.15});
