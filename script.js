@@ -124,5 +124,20 @@ document.addEventListener("click", function(e) {
         observer.unobserve(entry.target);
       }
     });
-  })
-}, { threshol: 0.15});
+  }, { threshold: 0.15});
+
+  document.querySelectorAll(".reveal, section, .timeline-item").forEach((el) => {
+    if(!el.classList.contains("reveal")) el.classList.add("reveal");
+  });
+})();
+
+//Animated expanding and collapsing for projects
+document.querySelectorAll(".toggle-details").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const details = btn.nextElementSibling;
+    const isOpen = details.classList.toggle("open");
+    btn.setAttribute("aria-expanded", String(isOpen));
+    btn.textContent = isOpen ? "Hide Details" : "Show Details";
+    if (details.style && details.style.display) details.style.display = "";
+  });
+});
