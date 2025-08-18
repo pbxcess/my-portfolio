@@ -676,15 +676,15 @@ main {
 
 img { max-width: 100%; height: auto; display: block; }
 
-main img:not(.full-bleed) {
+main img:not(.full-bleed):not(.project-thumb) {
   width: clamp(260px, 90vw, 900px);
   max-height: 70vh;
   object-fit: contain;
-  display: block;
-  margin: 0 auto 1rem;
-  border-radius: 12px;
 }
 
+.project .project-thumb{ width: 140px; height: auto; }
+@media (min-width: 600px){ .project .project-thumb{ width: 180px; } }
+@media (min-width: 900px){ .project .project-thumb{ width: 220px; } }
 
 .full-bleed {
   width: 100vw;
