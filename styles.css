@@ -113,17 +113,6 @@ section {
 }
 
 /*Project Details Styling */
-.project-details {
-  padding: 15px;
-  max-width: 95%;
-  margin: 5px;
-  background-color: var(--fifth-color);
-}
-
-.project-details p {
-  color: var(--third-color);
-  font-size: 1.5rem;
-}
 
 /*Toggle Buttons styling*/
 .toggle-details {
@@ -413,6 +402,11 @@ footer p {
 #timeline {
   position: relative;
   padding: 50px 0;
+  font-family: var(--main-font);
+}
+
+#timeline p {
+  font-family: var(--main-font);
 }
 
 .timeline-container {
@@ -441,6 +435,7 @@ footer p {
   display: flex;
   align-items: center;
   z-index: 1;
+  font-family: var(--main-font);
 }
 
 .timeline-icon {
@@ -462,9 +457,10 @@ footer p {
   background-color: var(--third-color);
   padding: 15px 20px;
   border-radius: 10px;
-  font-family: var(--third-font);
+  font-family: var(--main-font);
   color: var(--fifth-color);
   max-width: 500px;
+  font-size: 1.8rem;
 }
 
 .timeline-image {
@@ -567,7 +563,7 @@ a:active,
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
-/* ===== Timeline (inherits your color scheme) ===== */
+/*Timeline for Projects*/
 :root{
   --tl-accent: var(--fifth-color);           /* accent line/marker */
   --tl-surface: var(--third-color);         /* card surface tint */
@@ -687,5 +683,11 @@ a:active,
 }
 .timeline.reveal.is-visible .timeline-card{
   transform: none;
+  opacity: 1;
+}
+
+.project-details .timeline-body,
+.project-details .timeline-card p {
+  color: var(--fifth-color);
   opacity: 1;
 }

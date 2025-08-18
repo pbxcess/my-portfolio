@@ -68,12 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const LUGrad = moment("2025", "YYYY");
     const humberGrad = moment("2026", "YYYY");
     const today = moment();
-    const hsText = `Graduated in 2020 (${today.diff(hsGrad, "years")} years ago)`;
-    const LUtext = `Graduated in 2025 (${today.diff(LUGrad, "years")} years ago)`;
-    const currentText = `Computer Programming student at Humber College (${today.format("YYYY")})`;
+    const hsText = `Graduated in 2020 ( ${today.diff( hsGrad, "years" )} years ago )`;
+    const LUtext = `Graduated in 2025 ( ${today.diff( LUGrad, "years" )} years ago )`;
+    const currentText = `Computer Programming student at Humber College ( ${today.format("YYYY")} )`;
 
-    const yearsUntilGrad = humberGrad.diff(today, "years");
-    const futureText = `Graduating from Humber in 2026 (in ${yearsUntilGrad} year${yearsUntilGrad !== 1 ? "s" : ""})`;
+    const yearsUntilGrad = humberGrad.diff( today, "years" );
+    const futureText = `Graduating from Humber in 2026 ( in ${yearsUntilGrad} year${yearsUntilGrad !== 1 ? "s" : ""} )`;
 
     const hsElem = document.getElementById("hsGrad");
     const LUElem = document.getElementById("LUGrad");
@@ -98,25 +98,24 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       target.scrollIntoView({behavior: "smooth"});
     }
-  })
+  });
 
   // Reveal on scroll
-  (function() {
+  ;(function() {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll(".reveal, section, .timeline-item").forEach((el) => {
+        if (!el.classList.contains("reveal")) el.classList.add("reveal");
+        observer.observe(el);
       });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll(".reveal, section, .timeline-item").forEach((el) => {
-      if (!el.classList.contains("reveal")) el.classList.add("reveal");
-      observer.observe(el);
-    });
   })();
-
 
   //Animated expanding and collapsing for projects
   document.querySelectorAll(".toggle-details").forEach((btn) => {
