@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-//Typed.js animation
+    //Typed.js animation
 
   new Typed ("#typed-output", {
     strings: [
@@ -77,23 +77,28 @@ document.addEventListener("DOMContentLoaded", () => {
     loop: true
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const hsGrad = moment("2020", "YYYY");
-    const LUGrad = moment("2025", "YYYY");
-    const today = moment();
+  //Moment.js
+  const hsGrad = moment("2020", "YYYY");
+  const LUGrad = moment("2025", "YYYY");
+  const humberGrad = moment("2026", "YYYY");
+  const today = moment();
 
-    const hsText = `Graduated in 2020 (${today.diff(hsGrad, "years")} years ago)`;
-    const LUtext = `Graduated in 2025 (${today.diff(LUGrad, "years")} years go)`;
-    const currentText = `Computer Programming student at Humber College (${today.format("YYYY")})`;
+  const hsText = `Graduated in 2020 (${today.diff(hsGrad, "years")} years ago)`;
+  const LUtext = `Graduated in 2025 (${today.diff(LUGrad, "years")} years ago)`;
+  const currentText = `Computer Programming student at Humber College (${today.format("YYYY")})`;
 
-    const hsElem = document.getElementById("hs-grad");
-    const LUElem = document.getElementById("LU-grad");
-    const currentElem = document.getElementById("current");
+  const yearsUntilGrad = humberGrad.diff(today, "years");
+  const futureText = `Graduating from Humber in 2026 (in ${yearsUntilGrad} year${yearsUntilGrad !== 1 ? "s" : ""})`;
 
-    if (hsEleme && LUElem && currentElem) {
-      hsElem.textContent = hsText;
-      LUElem.textContent = LUtext;
-      currentElem.textContent = currentText;
-    }
-  })
+  const hsElem = document.getElementById("hs-grad");
+  const LUElem = document.getElementById("LU-grad");
+  const currentElem = document.getElementById("current");
+  const futureElem = document.getElementById("future");
+
+  if (hsElem && LUElem && currentElem && futureElem) {
+    hsElem.textContent = hsText;
+    LUElem.textContent = LUtext;
+    currentElem.textContent = currentText;
+    futureElem.textContent = futureText;
+  }
 });
