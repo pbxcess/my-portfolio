@@ -566,3 +566,126 @@ a:active,
 .toggle-details:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
 }
+
+/* ===== Timeline (inherits your color scheme) ===== */
+:root{
+  --tl-accent: var(--fifth-color);           /* accent line/marker */
+  --tl-surface: var(--third-color);         /* card surface tint */
+  --tl-muted: var(--muted, rgba(0,0,0,.06));     /* subtle borders */
+  --tl-text: var(--main-color);               /* text color */
+  --tl-complete: var(--success, #22c55e);        /* Completed colour */
+  --tl-current: var(--warning, #f59e0b);         /* Currently working colour */
+}
+
+.timeline{
+  position: relative;
+  margin-top: 2rem;
+}
+
+.timeline-title{
+  margin: 0 0 1rem 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+}
+
+.timeline-list{
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  position: relative;
+}
+
+.timeline-list::before{
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.35rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--tl-accent) 70%, transparent),
+    color-mix(in srgb, var(--tl-accent) 20%, transparent)
+  );
+  opacity: 0.75;
+}
+
+.timeline-item{
+  position: relative;
+  margin: 0 0 1rem 0;
+  padding-left: 0.75rem; /* align with markers */
+}
+
+.timeline-marker{
+  position: absolute;
+  left: -0.1rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tl-accent) 28%, transparent);
+  background: var(--tl-accent);
+}
+
+.timeline-card{
+  background: color-mix(in srgb, var(--tl-surface) 70%, white);
+  border: 1px solid color-mix(in srgb, var(--tl-accent) 15%, var(--tl-muted));
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  color: var(--tl-text);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.timeline-header{
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.phase{
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.badge{
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  background: var(--tl-muted);
+  border: 1px solid rgba(0,0,0,.07);
+  user-select: none;
+}
+
+.badge.is-complete{
+  background: color-mix(in srgb, var(--tl-complete) 22%, white);
+  border-color: color-mix(in srgb, var(--tl-complete) 35%, white);
+  color: #064e3b;
+}
+.badge.is-current{
+  background: color-mix(in srgb, var(--tl-current) 22%, white);
+  border-color: color-mix(in srgb, var(--tl-current) 35%, white);
+  color: #7a3b00;
+}
+
+.timeline-heading{
+  margin: 0.2rem 0 0.25rem 0;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.timeline-body{
+  margin: 0;
+  opacity: 0.92;
+}
+
+.timeline.reveal .timeline-card{
+  transform: translateY(6px);
+  transition: transform .6s ease, opacity .6s ease;
+  opacity: 0;
+}
+.timeline.reveal.is-visible .timeline-card{
+  transform: none;
+  opacity: 1;
+}
