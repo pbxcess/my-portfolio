@@ -545,24 +545,6 @@ main {
   padding-bottom: 80px;
 }
 
-/* Animations for links and buttons! */
-a,
-.toggle-details,
-.contact-form input[type="submit"] {
-  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-}
-
-a:active,
-.toggle-details:active,
-.contact-form input[type="submit"]:active {
-  transform: translateY(1px) scale(0.99);
-}
-.hero-intro .hero-nav a:hover,
-.contact-form input[type="submit"]:hover,
-.toggle-details:hover {
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
-}
-
 /*Timeline for Projects*/
 :root{
   --tl-accent: var(--fifth-color);           /* accent line/marker */
@@ -690,4 +672,22 @@ a:active,
 .project-details .timeline-card p {
   color: var(--fifth-color);
   opacity: 1;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+main img:not(.full-bleed) {
+  width: clamp(260px, 90vw, 900px);
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 12px;
+}
+
+
+.full-bleed {
+  width: 100vw;
+  max-height: 100vh;
+  object-fit: cover;
 }
