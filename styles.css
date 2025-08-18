@@ -531,3 +531,38 @@ html {
   transform: none;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+/*Animations for expanding and collapsing*/
+.project-details {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.35s ease;
+}
+
+.project-details.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+main {
+  padding-bottom: 80px;
+}
+
+/* Animations for links and buttons! */
+a,
+.toggle-details,
+.contact-form input[type="submit"] {
+  transition: tranform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+a:active,
+.toggle-details:active,
+.contact-form input[type="submit"]:active {
+  transform: translateY(1px) scale(0.99);
+}
+.hero-intro .hero-nav a:hover,
+.contact-form input[type="submit"]:hover,
+.toggle-details:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
