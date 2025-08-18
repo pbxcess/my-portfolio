@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearsUntilGrad = humberGrad.diff(today, "years");
   const futureText = `Graduating from Humber in 2026 (in ${yearsUntilGrad} year${yearsUntilGrad !== 1 ? "s" : ""})`;
 
-  const hsElem = document.getElementById("hs-grad");
-  const LUElem = document.getElementById("LU-grad");
+  const hsElem = document.getElementById("hsGrad");
+  const LUElem = document.getElementById("LUGrad");
   const currentElem = document.getElementById("current");
   const futureElem = document.getElementById("future");
 
