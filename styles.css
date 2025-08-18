@@ -407,13 +407,106 @@ footer p {
   text-decoration: underline;
 }
 
-#timeline ul {
-  list-style-type: disc;
-  padding-left: 20px;
+
+/*Moments for Timeline in About Me*/
+/* Timeline Base Styles */
+#timeline {
+  position: relative;
+  padding: 50px 0;
 }
 
-#timeline li {
-  font-size: 1.5rem;
-  color: var(--fifth-color);
-  margin-bottom: 10px;
+.timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-left: 50px;
+  margin-top: 40px;
 }
+
+/* Vertical Line */
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: 0;
+}
+
+/* Timeline Items */
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.timeline-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  z-index: 2;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content {
+  background-color: var(--third-color);
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-family: var(--third-font);
+  color: var(--fifth-color);
+  max-width: 500px;
+}
+
+.timeline-image {
+  margin-top: 10px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Horizontal Timeline - NOt sure if I want it in yet
+@media (min-width: 768px) {
+  .timeline-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 60px;
+    position: relative;
+    margin-left: 0;
+  }
+
+  .timeline-line {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    width: 100%;
+    background-color: var(--main-color);
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .timeline-icon {
+    margin: 0 0 10px 0;
+  }
+
+  .timeline-content {
+    max-width: 300px;
+  }
+}
+  */

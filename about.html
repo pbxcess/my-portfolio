@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Portfolio</title>
+
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <script src="script.js" defer></script>
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
     <header>
         <h1>Princess Krish Anne Bernardino</h1>
-
         <nav>
             <a href="index.html">Home</a>
             <a href="projects.html">Projects</a>
@@ -39,12 +44,31 @@
 
         <section id="timeline">
             <h2>My Timeline</h2>
-            <ul>
-                <li><strong>High School Graduation:</strong> <span id="hsGrad"></span></li>
-                <li><strong>Laurentian University:</strong><span id="LUGrad"></span></li>
-                <li><strong>Currently:</strong><span id="current"></span></li>
-                <li><strong>Future Goals:</strong><span id="future"></span></li>
-            </ul>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-icon">🎓</div>
+                    <div class="timeline-content" id="hsGrad">Graduated High School</div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-icon">📜</div>
+                    <div class="timeline-content" id="LUGrad">Graduated from Laurentian University</div>
+                    <img src="images/IMG_2580.jpg" alt="Grad at LU" class="timeline-image">
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-icon">🖥️</div>
+                    <div class="timeline-content" id="current">Currently Studying at Humber College</div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-icon">🎯</div>
+                    <div class="timeline-content" id="future">Graduating from Humber</div>
+                </div>
+            </div>
+
         </section>
 
         <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
@@ -53,5 +77,16 @@
     <footer>
         <p>&copy; Princess Krish Anne Bernardino 2025</p>
     </footer>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+
 </body>
 </html>
