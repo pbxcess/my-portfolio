@@ -1,69 +1,51 @@
-//JS interactivity
+//Contact Form Validation
+const form = document.querySelector(".contact-form");
+const errorDisplay = document.getElementById("formError");
 
-document.addEventListener("DOMContentLoaded", () => {
-    const toggleButtons = document.querySelectorAll(".toggle-details");
+if (form) {
+  form.addEventListener("submit", function (event) {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const comments = document.getElementById("comments").value.trim();
 
-    toggleButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const projectDetails = button.nextElementSibling;
+    let isValid = true;
+    let errorMessage = "";
 
-            if (projectDetails.style.display === "none" || projectDetails.style.display === "") {
-                projectDetails.style.display = "block";
-                button.textContent = "Hide Details";
-            } else {
-                projectDetails.style.display = "none";
-                button.textContent = "Show Details";
-            }
-        });
-    });
+    errorDisplay.style.display = "none";
 
-    //Contact Form Validation
-    const form = document.querySelector(".contact-form");
-    const errorDisplay = document.getElementById("formError");
-
-    if (form) {
-      form.addEventListener("submit", function (event) {
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const comments = document.getElementById("comments").value.trim();
-
-        let isValid = true;
-        let errorMessage = "";
-
-        errorDisplay.style.display = "none";
-
-        //Name Validation Error Msg
-        if (name === "") {
-          isValid = false;
-          errorMessage += "Name is required. ";
-        }
-
-        //Email Validation Error Msg
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          isValid = false;
-          errorMessage += "Please enter a valid email. ";
-        }
-
-        //Comments Validation Error Msg
-        if (comments === "") {
-          isValid = false;
-          errorMessage += "Comments cannot be empty. ";
-        }
-
-        //Any validation failure
-        if (!isValid) {
-          event.preventDefault();
-          errorDisplay.textContent = errorMessage;
-          errorDisplay.style.display = "block";
-        } else {
-            errorDisplay.style.display = "none" //To hide error if everything is valid!
-        }
-      });
+    //Name Validation Error Msg
+    if (name === "") {
+      isValid = false;
+      errorMessage += "Name is required. ";
     }
 
-    //Typed.js animation
+    //Email Validation Error Msg
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      isValid = false;
+      errorMessage += "Please enter a valid email. ";
+    }
 
+    //Comments Validation Error Msg
+    if (comments === "") {
+      isValid = false;
+      errorMessage += "Comments cannot be empty. ";
+    }
+
+    //Any validation failure
+    if (!isValid) {
+      event.preventDefault();
+      errorDisplay.textContent = errorMessage;
+      errorDisplay.style.display = "block";
+    } else {
+        errorDisplay.style.display = "none" //To hide error if everything is valid!
+    }
+  });
+}
+
+//Typed.js animation
+
+if (window.Typed && document.querySelector("#typed-output")) {
   new Typed ("#typed-output", {
     strings: [
       "Welcome to my Portfolio!",
@@ -76,13 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
     backDelay: 1500,
     loop: true
   });
+}
 
-  //Moment.js
+//Moment.js
+if (window.moment) {
   const hsGrad = moment("2020", "YYYY");
   const LUGrad = moment("2025", "YYYY");
   const humberGrad = moment("2026", "YYYY");
   const today = moment();
-
   const hsText = `Graduated in 2020 (${today.diff(hsGrad, "years")} years ago)`;
   const LUtext = `Graduated in 2025 (${today.diff(LUGrad, "years")} years ago)`;
   const currentText = `Computer Programming student at Humber College (${today.format("YYYY")})`;
@@ -101,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentElem.textContent = currentText;
     futureElem.textContent = futureText;
   }
-});
+}
 
 // Smooth scrolling
 document.addEventListener("click", function(e) {
@@ -110,12 +93,12 @@ document.addEventListener("click", function(e) {
   const id = link.getAttribute("href").slice(1);
   const target = document.getElementById(id);
   if (target) {
-    e,preventDefault();
+    e.preventDefault();
     target.scrollIntoView({behavior: "smooth"});
   }
 })
 
-//Reveal on scroll
+// Reveal on scroll
 (function() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -124,12 +107,14 @@ document.addEventListener("click", function(e) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15});
+  }, { threshold: 0.15 });
 
   document.querySelectorAll(".reveal, section, .timeline-item").forEach((el) => {
-    if(!el.classList.contains("reveal")) el.classList.add("reveal");
+    if (!el.classList.contains("reveal")) el.classList.add("reveal");
+    observer.observe(el);
   });
 })();
+
 
 //Animated expanding and collapsing for projects
 document.querySelectorAll(".toggle-details").forEach((btn) => {
